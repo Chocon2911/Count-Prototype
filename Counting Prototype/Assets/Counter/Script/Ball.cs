@@ -20,6 +20,14 @@ public class Ball : MonoBehaviour
         {
             rbBall.velocity = rbBall.velocity.normalized * 5f;
         }
+        if(transform.position.z < -1.5)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, -1.5f);
+        }
+        if(transform.position.z > 1.9)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, 1.5f);
+        }
     }
     IEnumerator DestroyAfterASecond()
     {

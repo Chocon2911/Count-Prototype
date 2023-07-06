@@ -11,10 +11,11 @@ public class SpawnManager : MonoBehaviour
     private float xRange = 21f;
 
     private float startDelay = 3f;
-    private float rateDelay = 2f;
+    private float rateDelay;
 
     void Start()
     {
+        rateDelay = Random.Range(2f, 4f);
         InvokeRepeating("SpawnBall", startDelay, rateDelay);
     }
     private void SpawnBall()
@@ -22,5 +23,9 @@ public class SpawnManager : MonoBehaviour
         float horizontalRange = Random.Range(-xRange, xRange);
         Vector3 spawnPos = new Vector3(horizontalRange, yPos, 0);
         Instantiate(ball, spawnPos, ball.transform.rotation);
+    }
+    private void FixedUpdate()
+    {
+        rateDelay = Random.Range(2f, 8f);
     }
 }

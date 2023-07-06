@@ -9,6 +9,8 @@ TagManager:
   - right box boundary
   - ball
   - ballInBox
+  - wall
+  - VirtualGround
   layers:
   - Default
   - TransparentFX

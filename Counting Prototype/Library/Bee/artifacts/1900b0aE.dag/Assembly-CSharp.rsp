@@ -116,8 +116,8 @@
 -define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
--r:"D:/UnityLearn/Counting Prototype/Library/PackageCache/com.unity.testtools.codecoverage@1.2.2/lib/ReportGenerator/ReportGeneratorMerged.dll"
--r:"D:/UnityLearn/Counting Prototype/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"D:/Github/Count-Prototype/Counting Prototype/Library/PackageCache/com.unity.testtools.codecoverage@1.2.2/lib/ReportGenerator/ReportGeneratorMerged.dll"
+-r:"D:/Github/Count-Prototype/Counting Prototype/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"E:/personal/Unity/2021.3.19f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"E:/personal/Unity/2021.3.19f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
 -r:"E:/personal/Unity/2021.3.19f1/Editor/Data/Managed/UnityEngine/UnityEditor.DiagnosticsModule.dll"
@@ -351,9 +351,14 @@
 "Assets/Counter/Script/Ball.cs"
 "Assets/Counter/Script/CameraRotatFollow.cs"
 "Assets/Counter/Script/Counter.cs"
+"Assets/Counter/Script/MainMenu.cs"
 "Assets/Counter/Script/MenuHandler.cs"
 "Assets/Counter/Script/PlayerControl.cs"
 "Assets/Counter/Script/SpawnManager.cs"
+"Assets/SimpleCumulus/Demo/Scripts/Player/FPSWalkerEnhanced.cs"
+"Assets/SimpleCumulus/Demo/Scripts/Player/SmoothMouseLook.cs"
+"Assets/SimpleCumulus/Demo/Scripts/Skybox/SkyboxChanger.cs"
+"Assets/SimpleCumulus/Demo/Scripts/Skybox/SkyboxRotator.cs"
 -langversion:9.0
 
 /deterministic

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Net;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,34 +29,21 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        
     }
     // Update is called once per frame
     private void Update()
     {
-        //limit area that player can move
-        /*
-        xPos = transform.position.x;
-        yPos = transform.position.y;
-        if (xPos < -xBoundary)
+        //update score text
+        countText.text = "Score: " + score;
+    }
+    private void FixedUpdate()
+    {
+        if (transform.position.y > 40f)
         {
-            xPos = -xBoundary;
+            transform.position = new Vector3(0, 1, 0);
+            rb.velocity = new Vector3(0,0,0);
         }
-        if (yPos < 0.2f)
-        {
-            yPos = 0.2f;
-        }
-        if (yPos > yBoundary)
-        {
-            yPos = yBoundary;
-        }
-        if (xPos > xBoundary)
-        {
-            xPos = xBoundary;
-        }
-        pos = new Vector3(xPos, yPos, transform.position.z);
-        transform.position = pos;
-        */
-        countText.text = "Count: " + score;
     }
 
     //use mouse to drag player around
@@ -75,33 +64,27 @@ public class PlayerControl : MonoBehaviour
         if (xPos <= -xBoundary)
         {
             xPos = -xBoundary;
-            pos = new Vector3(xPos, yPos, goalPosition.z);
-            rb.MovePosition(pos);
+            rb.MovePosition(new Vector3(xPos, yPos, goalPosition.z));
         }
         if (yPos <= 0.2f)
         {
             yPos = 0.2f;
-            pos = new Vector3(xPos, yPos, goalPosition.z); 
-            rb.MovePosition(pos);
+            rb.MovePosition(new Vector3(xPos, yPos, goalPosition.z));
         }
         if (yPos >= yBoundary)
         {
             yPos = yBoundary;
-            pos = new Vector3(xPos, yPos, goalPosition.z);
-            rb.MovePosition(pos);
+            rb.MovePosition(new Vector3(xPos, yPos, goalPosition.z));
         }
         if (xPos >= xBoundary)
         {
             xPos = xBoundary; 
-            pos = new Vector3(xPos, yPos, goalPosition.z);
-            rb.MovePosition(pos);
+            rb.MovePosition(new Vector3(xPos, yPos, goalPosition.z));
         }
-        else
+        if (xPos > -xBoundary && yPos > 0.2f && yPos < yBoundary && xPos < xBoundary)
         {
             rb.MovePosition(goalPosition);
         }
-
-        
     }
     private void OnMouseUp()
     {
@@ -120,6 +103,11 @@ public class PlayerControl : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             rb.useGravity = false;
+            
+        }
+        if (collision.gameObject.CompareTag("wall"))
+        {
+            rb.velocity = Vector3.zero;
         }
     }
     private void OnTriggerEnter(Collider other)
