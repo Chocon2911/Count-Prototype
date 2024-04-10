@@ -1110,4 +1110,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Counter/Scene/Menu.unity
   - Assets/Counter/Scene/Main.unity
-  playerPath: D:/Github/Counting Prototype.exe
+  playerPath: D:/Github/Count Prototype.exe
